@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Cot {
+import parser.function.elements.Expression
 
-}
+case class Cot[A: Numeric](expr: Expression[A])

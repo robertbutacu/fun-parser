@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Arccos {
+import parser.function.elements.Expression
 
-}
+case class Arccos[A: Numeric](expr: Expression[A])

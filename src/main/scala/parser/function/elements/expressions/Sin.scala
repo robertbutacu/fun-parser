@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Sin {
+import parser.function.elements.Expression
 
-}
+case class Sin[A: Numeric](expr: Expression[A])

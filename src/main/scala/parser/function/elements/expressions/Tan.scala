@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Tan {
+import parser.function.elements.Expression
 
-}
+case class Tan[A: Numeric](expr: Expression[A])

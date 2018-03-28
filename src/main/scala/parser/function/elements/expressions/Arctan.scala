@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Arctan {
+import parser.function.elements.Expression
 
-}
+case class Arctan[A: Numeric](expr: Expression[A])

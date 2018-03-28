@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Divide {
+import parser.function.elements.Expression
 
-}
+case class Divide[A: Numeric](dividend: Expression[A], divisor: Expression[A])

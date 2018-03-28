@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Cos {
+import parser.function.elements.Expression
 
-}
+case class Cos[A](expr: Expression[A])

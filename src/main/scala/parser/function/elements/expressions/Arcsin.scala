@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Arcsin {
+import parser.function.elements.Expression
 
-}
+case class Arcsin[A: Numeric](expr: Expression[A])

@@ -1,5 +1,5 @@
 package parser.function.elements.expressions
 
-class Subtract {
+import parser.function.elements.Expression
 
-}
+case class Subtract[A: Numeric](expr1: Expression[A], expr2: Expression[A])
