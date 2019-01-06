@@ -1,3 +1,12 @@
 package parser.function.elements.fundamental
 
-case class Constant[A: Numeric](value: A)
+import parser.function.elements.Expression
+
+case class Constant[A: Fractional](value: A) extends Expression[A] {
+  override def compute(implicit n: Fractional[A]): Option[A] = ???
+
+  override def mapConstants[B: Numeric](f: A => B)(implicit n: Fractional[A]): Unit = ???
+
+  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Unit = ???
+}
+
