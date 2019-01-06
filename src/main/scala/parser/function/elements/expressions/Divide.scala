@@ -8,6 +8,7 @@ case class Divide[A: Fractional](dividend: Expression[A], divisor: Expression[A]
 
   override def mapConstants[B: Fractional](f: A => B)(implicit n: Fractional[A]): Expression[A] = ???
 
-  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] = ???
+  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] =
+    this.copy(dividend = dividend.replaceArgument(old, updated), divisor = divisor.replaceArgument(old, updated))
 }
 

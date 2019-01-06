@@ -8,5 +8,6 @@ case class Modulus[A: Fractional](expr1: Expression[A], expr2: Expression[A]) ex
 
   override def mapConstants[B: Fractional](f: A => B)(implicit n: Fractional[A]): Expression[A] = ???
 
-  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] = ???
+  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] =
+    this.copy(expr1 = expr1.replaceArgument(old, updated), expr2 = expr2.replaceArgument(old, updated))
 }

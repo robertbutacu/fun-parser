@@ -8,5 +8,6 @@ case class Cos[A](expr: Expression[A]) extends Expression[A] {
 
   override def mapConstants[B: Fractional](f: A => B)(implicit n: Fractional[A]): Expression[A] = ???
 
-  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] = ???
+  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] =
+    this.copy(expr = expr.replaceArgument(old, updated))
 }

@@ -7,5 +7,7 @@ case class Argument[A: Fractional](name: String, value: Option[A] = None) extend
 
   override def mapConstants[B: Fractional](f: A => B)(implicit n: Fractional[A]): Expression[A] = ???
 
-  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] = ???
+  override def replaceArgument(old: Argument[A], updated: Argument[A])(implicit n: Fractional[A]): Expression[A] =
+    if(this == old) updated
+    else            this
 }
