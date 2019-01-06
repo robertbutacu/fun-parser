@@ -1,5 +1,4 @@
 package parser
 
 object Parser {
-
 }
